@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Almira Maulida Azmi</title>
+    <link rel="icon" type="image/png" href="foto.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222222;
+        }
+
+        .date-time {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 14px;
+            color: #555555;
+        }
+
+        .profile {
+            width: 100%;
+            text-align: center;
+            background-color: #b9e3f5;
+            padding-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        .foto-link {
+            display: inline-block;
+        }
+
+        .foto {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .foto:hover {
+            transform: scale(1.05);
+            opacity: 0.8;
+        }
+
+        .nama {
+            margin-top: 20px;
+            font-size: 28px;
+        }
+
+        .identitas {
+            margin-top: 8px;
+            font-size: 16px;
+            color: #555555;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .social-item {
+            text-align: center;
+        }
+
+        .social-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .social-item img:hover {
+            transform: scale(1.15);
+        }
+
+        .social-item p {
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="date-time">
+        <time id="date-time"></time>
+    </div>
+
+    <section class="profile">
+
+        <a href="mailto:almiramaulida052@gmail.com"
+   class="foto-link">
+
+            <picture>
+                <source media="(min-width: 600px)" srcset="self.jpg">
+                <img src="self.jpg" alt="Foto Profil" class="foto">
+            </picture>
+
+        </a>
+
+        <h2 class="nama">Almira Maulida Azmi</h2>
+
+        <p class="identitas">
+            NIM 102042500142 / Fakultas Rekayasa Industri / Sistem Informasi
+        </p>
+
+    </section>
+
+    <div class="social-media">
+
+        <div class="social-item">
+            <a href="https://github.com/usernamekamu" target="_blank">
+                <img src="Github.jpg" alt="GitHub">
+            </a>
+            <p>GitHub</p>
+        </div>
+
+        <div class="social-item">
+            <a href="https://www.instagram.com/almrdzmi" target="_blank">
+                <img src="insta.jpg" alt="Instagram">
+            </a>
+            <p>Instagram</p>
+        </div>
+
+        <div class="social-item">
+            <a href="https://www.linkedin.com/in/almiramaulidaazmi" target="_blank">
+                <img src="linkedin.jpg" alt="LinkedIn">
+            </a>
+            <p>LinkedIn</p>
+        </div>
+
+        <div class="social-item">
+    <a href="https://youtube.com/@almirazmii08?si=_yMtDz6C-M6ZNPnH" target="_blank">
+        <img src="yt.jpg" alt="YouTube">
+    </a>
+    <p>YouTube</p>
+</div>
+
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const sekarang = new Date();
+
+            const tanggal = sekarang.toLocaleDateString('id-ID', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+
+            const waktu = sekarang.toLocaleTimeString('id-ID');
+
+            document.getElementById("date-time").textContent =
+                tanggal + " - " + waktu;
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+
+</body>
+</html>
